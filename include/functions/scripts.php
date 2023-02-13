@@ -18,6 +18,8 @@ if ( ! defined( '_S_VERSION' ) ) {
 function autoparts_scripts() {
     wp_enqueue_style('autoparts-carousel', get_template_directory_uri() . '/css/owl.carousel.min.css', array(), _S_VERSION);
 
+    wp_enqueue_style('autoparts-jgrowl', get_template_directory_uri() . '/css/jquery.jgrowl.min.css', array(), _S_VERSION);
+
     wp_enqueue_style('autoparts-style-theme', get_template_directory_uri() . '/css/style.min.css', array(), _S_VERSION);
 
     wp_enqueue_style( 'autoparts-style', get_stylesheet_uri(), array(), _S_VERSION );
@@ -31,8 +33,10 @@ function autoparts_scripts() {
 
     wp_enqueue_script( 'autoparts-magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', array(), _S_VERSION, true );
 
-
-
+    global $autoparts;
+    if($autoparts['messages-on']) {
+        wp_enqueue_script('autoparts-jgrowl', get_template_directory_uri() . '/js/jquery.jgrowl.min.js', array(), _S_VERSION, true);
+    }
     wp_enqueue_script( 'autoparts-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true );
 
     wp_enqueue_script( 'autoparts-quick', get_template_directory_uri() . '/js/quick.js', array(), _S_VERSION, true );
@@ -40,6 +44,16 @@ function autoparts_scripts() {
         'url' => admin_url('admin-ajax.php'),
         'nonce' => wp_create_nonce('quick_nonce')
     ));
+
+    if($autoparts['messages-on']) {
+
+        wp_enqueue_script('autoparts-messages', get_template_directory_uri() . '/js/messages.js', array(), _S_VERSION, true);
+        wp_localize_script('autoparts-messages', 'messages', array(
+            'url' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('messages_nonce')
+        ));
+
+    }
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );

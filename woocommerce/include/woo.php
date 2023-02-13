@@ -284,14 +284,18 @@ function pop_quick() { ?>
     <?php
  }
 
-
+/*
 add_action('autoparts-quick-views-theme', 'woocommerce_template_single_title', 5);
 add_action('autoparts-quick-views-theme', 'woocommerce_template_single_rating', 10);
 add_action('autoparts-quick-views-theme', 'woocommerce_template_single_price', 15);
 add_action('autoparts-quick-views-theme', 'woocommerce_template_single_excerpt', 20);
 add_action('autoparts-quick-views-theme', 'woocommerce_template_single_add_to_cart', 25);
 add_action('autoparts-quick-views-theme', 'woocommerce_template_single_meta', 17);
+*/
 add_action('autoparts-quick-views-theme-left', 'autoparts_show_product_images', 20);
+
+
+
 
 
 

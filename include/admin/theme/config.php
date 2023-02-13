@@ -232,6 +232,7 @@ require_once Redux_Core::$dir . '../theme/contact/favicon.php';
 require_once Redux_Core::$dir . '../theme/contact/headpage.php';
 require_once Redux_Core::$dir . '../theme/contact/sidebar.php';
 require_once Redux_Core::$dir . '../theme/contact/quick.php';
+require_once Redux_Core::$dir . '../theme/contact/messages.php';
 
 Redux::set_section(
     $opt_name,
