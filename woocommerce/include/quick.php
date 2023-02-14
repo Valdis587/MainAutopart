@@ -41,3 +41,6 @@ if($query->have_posts()){
     wp_send_json($data);
     wp_die();
 } }
+
+
+

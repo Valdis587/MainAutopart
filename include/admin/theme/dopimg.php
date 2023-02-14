@@ -65,3 +65,41 @@ Redux_Metaboxes::set_box(
     )
 );
 
+Redux_Metaboxes::set_box(
+    $opt_name,
+    array(
+        'id'         => 'count',
+        'title'      => esc_html__( 'Акции', 'your-textdomain-here' ),
+        'post_types' => array( 'product' ),
+        'position'   => 'normal', // normal, advanced, side.
+        'priority'   => 'high', // high, core, default, low.
+        'sections'   => array(
+            array(
+                'title'  => esc_html__( 'Дата окончания акции', 'your-textdomain-here' ),
+                'id'     => 'count-title',
+                'icon'   => 'el-icon-cogs',
+                'fields' => array(
+                    array(
+                        'id'       => 'count-year',
+                        'type'     => 'text',
+                        'title'    => esc_html__( 'Год', 'your-textdomain-here' ),
+                        'placeholder'  => '2023',
+                    ),
+                    array(
+                        'id'       => 'count-mons',
+                        'type'     => 'text',
+                        'title'    => esc_html__( 'Месяц', 'your-textdomain-here' ),
+                        'placeholder'  => '4',
+                    ),
+                    array(
+                        'id'       => 'count-day',
+                        'type'     => 'text',
+                        'title'    => esc_html__( 'День', 'your-textdomain-here' ),
+                        'placeholder'  => '10',
+                    ),
+                ),
+            ),
+        ),
+    )
+);
+

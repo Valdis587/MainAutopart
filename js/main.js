@@ -55,14 +55,14 @@ $(document).ready(function () {
       $('body,html').animate({ scrollTop: 0 }, 1200);
       return false;
    });
-/*
+
    $('.product__quick').click(function () {
       $('.themeModal').addClass('themeModal-open');
    });
    $('.modal-close').click(function () {
       $('.themeModal').removeClass('themeModal-open');
    });
-*/
+
    $('.brands__carusel').owlCarousel({
       loop: true,
       margin: 15,
@@ -226,27 +226,6 @@ $(document).ready(function () {
          }
       }
    });
-/*
-   $('.product__quick').magnificPopup({
-      type: 'inline',
-      preloader: false,
-      focus: '#username',
-      modal: true
-   });
-   $(document).on('click', '.modal-close', function (e) {
-      e.preventDefault();
-      $.magnificPopup.close();
-   });
-   */
-
-
-
-   $('.product__quick').click(function () {
-      $('.themeModal').addClass('themeModal-open');
-   });
-   $('.modal-close').click(function () {
-      $('.themeModal').removeClass('themeModal-open');
-   });
 
    $('.image-popup-no-margins').magnificPopup({
       type: 'image',
@@ -263,13 +242,13 @@ $(document).ready(function () {
       }
    });
 
-    $('.shop__miniature-big-wrapper').owlCarousel({
+   $('.shop__miniature-big-wrapper').owlCarousel({
       items: 1,
       itemsTablet: [768, 2],
       itemsDesktop: [1199, 1]
 
    });
-     $('.shop__miniature-small-wrapper').owlCarousel({
+   $('.shop__miniature-small-wrapper').owlCarousel({
       items: 4,
       margin: 20,
       loop: true,
@@ -291,7 +270,11 @@ $(document).ready(function () {
          }
       }
    });
+
+
+
 });
+
 
 
 

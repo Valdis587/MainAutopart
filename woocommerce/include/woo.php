@@ -111,13 +111,25 @@ remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_produ
 remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 
 add_action('woocommerce_before_shop_loop_item_title', 'autoparts_loop_product_thumbnail', 10);
-function autoparts_loop_product_thumbnail() { ?>
+function autoparts_loop_product_thumbnail() {
+    global $autoparts;
+    ?>
     <div class="product__left">
         <div class="product__img">
+            <?php
+            if($autoparts['count-on']) {
+            if($autoparts['count-year'] && $autoparts['count-mons'] && $autoparts['count-day']) {
+            ?>
+            <div id="<?php echo get_the_ID() ?>" class="product__count countdown_box main-action<?php echo get_the_ID() ?>" data-year="<?php echo $autoparts['count-year']; ?>" data-mons="<?php echo $autoparts['count-mons']; ?>" data-day="<?php echo $autoparts['count-day']; ?>">
+                <div class="countdown_inner">
+                    <h3 class="product__count-title">До конца акции:</h3>
+                    <div class="defaultCountdown-<?php echo get_the_ID() ?> countdown-row"></div>
+                </div>
+            </div>
+            <?php } } ?>
             <a href="<?php the_permalink(); ?>">
                 <?php
                 global $product;
-                global $autoparts;
                 $attachment_ids = $product->get_gallery_image_ids();
                 $main=$product->get_image_id();
                 $thumbs=wp_get_attachment_image_src($main, 'product-archive');

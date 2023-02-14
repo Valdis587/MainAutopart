@@ -38,11 +38,13 @@ global $product;
     <img width="40" height="40" src="<?php echo $thumbs['0']; ?>" alt="<?php the_title(''); ?>">
     <h3><a href="<?php the_permalink(); ?>"><?php the_title(''); ?></a></h3>
     </div>
-    <p class="messages__cart">Перейти <a href="#">в корзину</a></p>
+    <p class="messages__cart">Перейти <a href="<?php echo wc_get_cart_url();?>">в корзину</a></p>
 </div>
 <?php }
     $data['product'] = ob_get_clean();
     wp_send_json($data);
     wp_die();
 } }
+
+
 

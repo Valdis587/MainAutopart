@@ -16,6 +16,7 @@ if ( ! defined( '_S_VERSION' ) ) {
  * Enqueue scripts and styles.
  */
 function autoparts_scripts() {
+    global $autoparts;
     wp_enqueue_style('autoparts-carousel', get_template_directory_uri() . '/css/owl.carousel.min.css', array(), _S_VERSION);
 
     wp_enqueue_style('autoparts-jgrowl', get_template_directory_uri() . '/css/jquery.jgrowl.min.css', array(), _S_VERSION);
@@ -27,16 +28,29 @@ function autoparts_scripts() {
 
     wp_enqueue_script( 'autoparts-jQuery', get_template_directory_uri() . '/js/jQuery.min.js', array(), _S_VERSION, true);
 
+    if($autoparts['count-on']) {
+    wp_enqueue_script( 'autoparts-countdown', get_template_directory_uri() . '/js/jquery.countdown.min.js', array(), _S_VERSION, true);
+    
+        wp_enqueue_script('autoparts-count', get_template_directory_uri() . '/js/count.js', array(), _S_VERSION, true);
 
+        wp_localize_script('autoparts-count', 'count', array(
+            'url' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('count_nonce')
+        ));
+    }
 
     wp_enqueue_script( 'autoparts-owl.carousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array(), _S_VERSION, true);
 
     wp_enqueue_script( 'autoparts-magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', array(), _S_VERSION, true );
 
-    global $autoparts;
+
     if($autoparts['messages-on']) {
         wp_enqueue_script('autoparts-jgrowl', get_template_directory_uri() . '/js/jquery.jgrowl.min.js', array(), _S_VERSION, true);
     }
+
+
+
+
     wp_enqueue_script( 'autoparts-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true );
 
     wp_enqueue_script( 'autoparts-quick', get_template_directory_uri() . '/js/quick.js', array(), _S_VERSION, true );

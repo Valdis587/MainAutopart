@@ -51,6 +51,10 @@ if ( class_exists( 'WooCommerce' ) ) {
 
     require get_template_directory() . '/woocommerce/include/quick.php';
 
+    require get_template_directory() . '/woocommerce/include/count.php';
+
+    require get_template_directory() . '/widgets/actions.php';
+
     require get_template_directory() . '/woocommerce/include/messages.php';
 
     require get_template_directory() . '/woocommerce/include/shop-sidebar.php';
@@ -64,6 +68,7 @@ if ( class_exists( 'WooCommerce' ) ) {
     require get_template_directory() . '/widgets/prodhit.php';
 
     require get_template_directory() . '/widgets/prosmprod.php';
+
 }
 
 /**
