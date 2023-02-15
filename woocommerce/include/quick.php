@@ -34,9 +34,14 @@ if($query->have_posts()){
                 </div>
 
                 <div itemtype="<?php echo woocommerce_get_product_schema(); ?>" class="shop__tovar-right" id="product-<?php echo $product->id; ?>">
-                   <?php do_action( 'woocommerce_single_product_summary' ); ?>
+                   <?php do_action( 'autoparts-quick-views-theme' ); ?>
                         </div>
-    <?php }
+    <?php
+
+
+
+
+    }
     $data['product'] = ob_get_clean();
     wp_send_json($data);
     wp_die();

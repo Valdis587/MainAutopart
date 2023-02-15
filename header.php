@@ -68,6 +68,9 @@
                     <div class="header__cart-box">
                         <span class="header__cart"><i class="icon-shopping-basket"></i></span>
                         <span class="header__cart-item"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                        <?php if( class_exists( 'YITH_WCWL' ) ) { ?>
+                        <span class="header__witelist-item"><?php echo YITH_WCWL()->count_products(); ?></span>
+                        <?php } ?>
                     </div>
                     <span class="header__cart-name">Корзина <span class="header__cart-coint"><?php echo WC()->cart->get_cart_subtotal(); ?></span></span>
                 </a>

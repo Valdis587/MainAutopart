@@ -39,11 +39,11 @@ Redux::set_section(
             array(
                 'id'       => 'head-color-item',
                 'type'     => 'color',
-                'title'    => esc_html__( 'Фон количества товаров в корзине', 'your-textdomain-here' ),
+                'title'    => esc_html__( 'Фон количества товаров в корзине и избранном', 'your-textdomain-here' ),
                 'default'  => '#387d09',
                 'validate' => 'color',
                 'output'   => array(
-                    'background-color' => '.header__cart-item',
+                    'background-color' => '.header__cart-item, .header__witelist-item',
                 ),
             ),
             array(
