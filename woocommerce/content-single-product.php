@@ -31,7 +31,7 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-<div id="product-<?php the_ID(); ?>">
+<div id="product-<?php the_ID(); ?>"  >
     <div class="shop__tovar-content">
         <div class="shop__tovar-left">
 	<?php

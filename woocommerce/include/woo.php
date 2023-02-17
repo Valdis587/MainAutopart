@@ -283,7 +283,8 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 add_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 15);
 
 add_action('wp_footer', 'pop_quick');
-function pop_quick() { ?>
+function pop_quick() {
+    ?>
     <div id="quick-modal" class="themeModal">
         <div class="themeModal__body">
             <button class="modal-close"><i class="icon-times"></i></button>
@@ -301,7 +302,7 @@ add_action('autoparts-quick-views-theme', 'woocommerce_template_single_title', 5
 add_action('autoparts-quick-views-theme', 'woocommerce_template_single_rating', 10);
 add_action('autoparts-quick-views-theme', 'woocommerce_template_single_price', 15);
 add_action('autoparts-quick-views-theme', 'woocommerce_template_single_excerpt', 20);
-add_action('autoparts-quick-views-theme', 'woocommerce_template_single_add_to_cart', 25);
+add_action('autoparts-quick-views-theme', 'woocommerce_template_single_add_to_cart', 30);
 add_action('autoparts-quick-views-theme', 'woocommerce_template_single_meta', 17);
 
 
