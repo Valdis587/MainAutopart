@@ -20,11 +20,6 @@ $(document).ready(function ($) {
                 var owl = $('.shop__miniature-big-wrapper');
                 var owl2 = $('.shop__miniature-small-wrapper');
                 owl.trigger('destroy.owl.carousel');
-                owl.owlCarousel({
-                    items: 1,
-                    itemsTablet: [768, 2],
-                    itemsDesktop: [1199, 1]
-                });
                 owl2.owlCarousel({
                     items: 4,
                     margin: 20,
@@ -48,6 +43,13 @@ $(document).ready(function ($) {
                             items: 4
                         }
                     }
+                });
+                //переключаль картинок в карточке товара //
+                $('.shop__miniature-small-item a').click(function (e) {
+                    if ($('.shop__miniature-big-item img').attr('src') !== $(this).attr('href')) {
+                        $('.shop__miniature-big-item img').hide().attr('src', $(this).attr('href')).fadeIn(1000);
+                    }
+                    e.preventDefault();
                 });
             }
 

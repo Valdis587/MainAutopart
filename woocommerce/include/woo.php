@@ -240,7 +240,7 @@ function autoparts_show_product_images() { ?>
                 $main=$product->get_image_id();
                 $thumbs=wp_get_attachment_image_src($main, 'product-single'); ?>
                 <div class="shop__miniature-big-item" >
-                    <img src="<?php echo $thumbs['0']; ?>" data-echo="<?php echo $thumbs['0']; ?>" alt="<?php the_title(''); ?>">
+                    <img src="<?php echo $thumbs['0']; ?>"  alt="<?php the_title(''); ?>">
                 </div>
             </div>
         </div>
