@@ -28,7 +28,8 @@ if($query->have_posts()){
     while ($query->have_posts()){
         $query->the_post();
         global $product;
-
+        
+        
     ?>
 
                 <div itemtype="<?php echo woocommerce_get_product_schema(); ?>" class="shop__tovar-left" id="product-<?php echo $product->id; ?>">

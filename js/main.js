@@ -242,12 +242,7 @@ $(document).ready(function () {
       }
    });
 
-   $('.shop__miniature-big-wrapper').owlCarousel({
-      items: 1,
-      itemsTablet: [768, 2],
-      itemsDesktop: [1199, 1]
 
-   });
    $('.shop__miniature-small-wrapper').owlCarousel({
       items: 4,
       margin: 20,
@@ -271,7 +266,13 @@ $(document).ready(function () {
       }
    });
 
-
+   //переключаль картинок в карточке товара //
+   $('.shop__miniature-small-item a').click(function (e) {
+      if ($('.shop__miniature-big-item img').attr('src') !== $(this).attr('href')) {
+         $('.shop__miniature-big-item img').hide().attr('src', $(this).attr('href')).fadeIn(1000);
+      }
+      e.preventDefault();
+   });
 
 });
 

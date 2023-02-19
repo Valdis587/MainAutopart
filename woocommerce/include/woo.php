@@ -233,38 +233,27 @@ add_action('woocommerce_before_single_product_summary', 'autoparts_show_product_
 function autoparts_show_product_images() { ?>
     <div class="shop__miniature">
         <div class="shop__miniature-big">
-            <div id="big" class="shop__miniature-big-wrapper owl-carousel owl-theme">
+            <div id="big" class="shop__miniature-big-wrapper">
                 <?php
                 global $product;
                 $attachment_ids = $product->get_gallery_image_ids();
                 $main=$product->get_image_id();
                 $thumbs=wp_get_attachment_image_src($main, 'product-single'); ?>
-                <div class="shop__miniature-big-item" id="slide1">
+                <div class="shop__miniature-big-item" >
                     <img src="<?php echo $thumbs['0']; ?>" data-echo="<?php echo $thumbs['0']; ?>" alt="<?php the_title(''); ?>">
                 </div>
-    <?php
-    if($attachment_ids) {
-        $item=0;
-        foreach ( $attachment_ids as $post)  {
-            $item++;
-            $image = wp_get_attachment_image_src($post, 'product-archive');  ?>
-                <div class="shop__miniature-big-item " id="slide<?php echo $item; ?>">
-                    <img src="<?php echo $image['0']; ?>" data-echo="<?php echo $image['0']; ?>" alt="<?php the_title(''); ?>">
-                </div>
-        <?php } }  ?>
             </div>
         </div>
         <?php  if($attachment_ids) { ?>
         <div class="shop__miniature-small ">
             <div id="small" class="shop__miniature-small-wrapper owl-carousel owl-theme">
     <?php
-
         $item=0;
         foreach ( $attachment_ids as $post)  {
             $item++;
             $image = wp_get_attachment_image_src($post, 'product-archive');  ?>
                 <div class="shop__miniature-small-item ">
-                    <a class="horizontal-thumb" data-target=".shop__miniature-big-wrapper" data-slide="<?php echo $item; ?>" href="#slide<?php echo $item; ?>">
+                    <a class="horizontal-thumb"  href="<?php echo $image['0']; ?>">
                         <img src="<?php echo $image['0']; ?>" alt="<?php the_title(''); ?>">
                     </a>
                 </div>
