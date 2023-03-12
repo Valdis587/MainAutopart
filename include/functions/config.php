@@ -68,6 +68,7 @@ if ( class_exists( 'WooCommerce' ) ) {
     require get_template_directory() . '/widgets/prodhit.php';
 
     require get_template_directory() . '/widgets/prosmprod.php';
+    
 
 }
 

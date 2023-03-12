@@ -18,18 +18,17 @@ function autoparts_popup_quick_view_callback() {
     if (!wp_verify_nonce($_POST['nonce'], 'quick_nonce')) {
         wp_die('Данные отправлены с левого адреса');
     }
+
     $product_id = (int) $_POST['id'];
+    global $product;
 
-    $params = array('p' => $product_id,
-        'post_type' => array('product','product_variation'));
+    wp( 'p=' . $product_id . '&post_type=product' );
 
-$query = new WP_Query($params);
-if($query->have_posts()){
-    while ($query->have_posts()){
-        $query->the_post();
-        global $product;
-        
-        
+    ob_start();
+
+   
+    while ( have_posts() ) :
+        the_post();
     ?>
 
                 <div itemtype="<?php echo woocommerce_get_product_schema(); ?>" class="shop__tovar-left" id="product-<?php echo $product->id; ?>">
@@ -37,16 +36,19 @@ if($query->have_posts()){
                 </div>
 
                 <div itemtype="<?php echo woocommerce_get_product_schema(); ?>" class="shop__tovar-right" id="product-<?php echo $product->id; ?>">
-                   <?php do_action( 'autoparts-quick-views-theme' ); ?>
+                   <?php do_action( 'autoparts_quick_views_theme' ); ?>
                         </div>
            
     <?php
-        
-    }
+
+    endwhile;
+ 
     $data['product'] = ob_get_clean();
     wp_send_json($data);
     wp_die();
-} }
+    // phpcs:enable WordPress.Security.NonceVerification.Recommended
+
+}
 
 
 

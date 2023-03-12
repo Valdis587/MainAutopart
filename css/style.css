@@ -1403,13 +1403,50 @@ li {
           flex: 1 1 700px;
 }
 
-.variations_form {
-  margin: 10px 0;
+.cfvsw-variation-disable-logic tbody,
+.cfvsw-variation-disable-logic tbody tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  row-gap: 10px;
+}
+
+.variations_form .cfvsw-variation-disable-logic .value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.variations_form .single_variation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+}
+
+.cfvsw-variation-disable-logic .label {
+  padding: 0 10px 0 0;
 }
 
 .variations .value,
 .reset_variations {
   padding: 0 0 0 10px;
+}
+
+.variations_form .cfvsw-variation-disable-logic .reset_variations {
+  padding: 10px 0 0 0;
 }
 
 .reset_variations {
@@ -1926,6 +1963,15 @@ p.stars.selected a:not(.active)::before {
   max-width: 150px;
   background-color: transparent;
   color: inherit;
+}
+
+.cfvsw-variation-disable-logic tbody,
+.cfvsw-variation-disable-logic tbody tr {
+  row-gap: 2px;
+}
+
+.cfvsw-shop-variations .cfvsw-swatches-container {
+  margin: 0 auto;
 }
 
 .header__top {
@@ -3027,7 +3073,7 @@ p.stars.selected a:not(.active)::before {
   margin: 0 auto;
 }
 
-.product {
+.product-box {
   text-align: center;
   border: 1px solid #e5e5e5;
   border-radius: 5px;
@@ -3035,6 +3081,21 @@ p.stars.selected a:not(.active)::before {
   -webkit-transition: all 0.3s ease 0.3s;
   -o-transition: all 0.3s ease 0.3s;
   transition: all 0.3s ease 0.3s;
+}
+
+.product-box .cfvsw_variations_form .variations_form {
+  margin: 0 auto;
+}
+
+.product-box .cfvsw-shop-variations tbody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 2px;
 }
 
 .product .is-countdown {
@@ -3186,13 +3247,14 @@ p.stars.selected a:not(.active)::before {
 }
 
 .shop__shop-vetrine-grid .product__right {
-  display: -ms-grid;
-  display: grid;
-  grid-auto-flow: row;
-  -ms-grid-rows: minmax(auto, 30px);
-  -ms-grid-columns: 1fr;
-      grid-template: minmax(auto, 30px)/1fr;
-  row-gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 5px;
 }
 
 .shop__shop-vetrine-list .product__desc {
@@ -3207,7 +3269,7 @@ p.stars.selected a:not(.active)::before {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 20px;
+  row-gap: 5px;
 }
 
 .product__price {
@@ -3292,13 +3354,14 @@ p.stars.selected a:not(.active)::before {
 }
 
 .caruselproduct .caruselproduct__cart .product__right {
-  display: -ms-grid;
-  display: grid;
-  grid-auto-flow: row;
-  -ms-grid-rows: minmax(auto, 30px);
-  -ms-grid-columns: 1fr;
-      grid-template: minmax(auto, 30px)/1fr;
-  row-gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 5px;
 }
 
 .caruselproduct .owl-nav {
@@ -3985,6 +4048,17 @@ p.stars.selected a:not(.active)::before {
   color: #000;
   -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
           box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
+}
+
+.jGrowl.top-right {
+  position: fixed;
+  margin: 10px 0 0 0;
+  left: 10%;
+  top: 5%;
+  z-index: 10000;
+  -webkit-transform: translate(-10%, -5%);
+      -ms-transform: translate(-10%, -5%);
+          transform: translate(-10%, -5%);
 }
 
 .shop__pop-content .variations select {

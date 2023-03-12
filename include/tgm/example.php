@@ -64,6 +64,11 @@ $plugins = array(
             'slug'      => 'woocommerce',
             'required'  => false,
         ),
+    array(
+        'name'      => 'Variation Swatches for WooCommerce',
+        'slug'      => 'variation-swatches-woo',
+        'required'  => false,
+    ),
         array(
             'name'      => 'Cyr-To-Lat',
             'slug'      => 'cyr2lat',

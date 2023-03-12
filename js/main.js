@@ -26,16 +26,28 @@ $(document).ready(function () {
       $('.header__menu-category').removeClass('header__menu-categorymob-open');
    });
 
-   $('.shop__shop-vetrine > .products').addClass('shop__shop-vetrine-grid')
-
+   $('.shop__shop-vetrine > .products').addClass('shop__shop-vetrine-grid');
+   if('.yit-wcan-container') {
+      $('.yit-wcan-container > .products').addClass('shop__shop-vetrine-grid');
+   }
+   
    $('.shop__shop-filter-buttons-list').click(function () {
       $('.shop__shop-vetrine > .products').removeClass('shop__shop-vetrine-grid');
       $('.shop__shop-vetrine > .products').addClass('shop__shop-vetrine-list');
+      if('.yit-wcan-container') {
+         $('.yit-wcan-container > .products').removeClass('shop__shop-vetrine-grid');
+         $('.yit-wcan-container > .products').addClass('shop__shop-vetrine-list');
+      }
+
    });
 
    $('.shop__shop-filter-buttons-grid').click(function () {
       $('.shop__shop-vetrine > .products').removeClass('shop__shop-vetrine-list');
       $('.shop__shop-vetrine > .products').addClass('shop__shop-vetrine-grid');
+      if('.yit-wcan-container') {
+         $('.yit-wcan-container > .products').removeClass('shop__shop-vetrine-list');
+         $('.yit-wcan-container > .products').addClass('shop__shop-vetrine-grid');
+      }
    });
 
    $('.sidebar__menu-category-list > .menu-item-has-children').click(function () {

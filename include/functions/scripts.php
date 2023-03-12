@@ -55,9 +55,9 @@ function autoparts_scripts() {
 
     wp_enqueue_script( 'autoparts-quick', get_template_directory_uri() . '/js/quick.js', array(), _S_VERSION, true );
     wp_localize_script('autoparts-quick', 'quick', array(
-        'url' => admin_url('admin-ajax.php'),
-        'nonce' => wp_create_nonce('quick_nonce')
-    ));
+       'url' => admin_url('admin-ajax.php'),
+       'nonce' => wp_create_nonce('quick_nonce')
+   ));
 
     if($autoparts['messages-on']) {
 

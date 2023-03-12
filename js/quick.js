@@ -15,7 +15,9 @@ $(document).ready(function ($) {
                 $('.shop__pop-content').text('Загрузка');
             },
             success:function(data) {
+                
                 $('.shop__pop-content').html(data.product);
+
                 //инициализация слайдра в попап //
                 var owl = $('.shop__miniature-big-wrapper');
                 var owl2 = $('.shop__miniature-small-wrapper');
@@ -56,6 +58,11 @@ $(document).ready(function ($) {
         });
     });
 });
+
+
+
+
+
 
 
 

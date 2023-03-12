@@ -97,10 +97,11 @@ function autoparts_shop_info_end() { ?>
     </div>
 <?php }
 add_action('woocommerce_before_shop_loop', 'autoparts_shop_vetrine', 37);
+
 function autoparts_shop_vetrine() { ?>
     <div class="shop__shop-vetrine">
 <?php }
-add_action('woocommerce_after_shop_loop', 'autoparts_shop_vetrine_end', 15);
+add_action('woocommerce_after_shop_loop', 'autoparts_shop_vetrine_end', 5);
 function autoparts_shop_vetrine_end() { ?>
     </div>
     <!--end -shop-vetrine-->
@@ -141,7 +142,7 @@ function autoparts_loop_product_thumbnail() {
                 <img class="product__img3" src="<?php echo $thumbs['0']; ?>" alt="<?php the_title(''); ?>">
                 <?php } ?>
     <?php if($autoparts['quick-on']) { ?>
-                <a id="product__quick" class="product__quick" data-product-id="<?php echo get_the_ID() ?>" href="#quick-modal"><i class="icon-search"></i></a>
+                <a id="product__quick" class="product__quick" data-product-id="<?php echo get_the_ID() ?>" href="#themeModal"><i class="icon-search"></i></a>
     <?php } ?>
         </a>
         </div>
@@ -222,7 +223,7 @@ function autoparts_button_wrapper_end() { ?>
 <?php }
 remove_action('woocommerce_no_products_found', 'wc_no_products_found', 10);
 remove_action('woocommerce_after_shop_loop', 'woocommerce_pagination', 10);
-add_action('woocommerce_after_shop_loop', 'autoparts_pagination', 10);
+add_action('woocommerce_after_shop_loop', 'autoparts_pagination', 3);
 function autoparts_pagination() {
     wp_main_pagination();
 }
@@ -287,12 +288,12 @@ function pop_quick() {
  }
 
 
-add_action('autoparts-quick-views-theme', 'woocommerce_template_single_title', 5);
-add_action('autoparts-quick-views-theme', 'woocommerce_template_single_rating', 10);
-add_action('autoparts-quick-views-theme', 'woocommerce_template_single_price', 15);
-add_action('autoparts-quick-views-theme', 'woocommerce_template_single_excerpt', 20);
-add_action('autoparts-quick-views-theme', 'woocommerce_template_single_add_to_cart', 30);
-add_action('autoparts-quick-views-theme', 'woocommerce_template_single_meta', 17);
+add_action('autoparts_quick_views_theme', 'woocommerce_template_single_title', 5);
+add_action('autoparts_quick_views_theme', 'woocommerce_template_single_rating', 10);
+add_action('autoparts_quick_views_theme', 'woocommerce_template_single_price', 15);
+add_action('autoparts_quick_views_theme', 'woocommerce_template_single_excerpt', 20);
+add_action('autoparts_quick_views_theme', 'woocommerce_template_single_add_to_cart', 30);
+add_action('autoparts_quick_views_theme', 'woocommerce_template_single_meta', 17);
 
 
 add_action('autoparts-quick-views-theme-left', 'autoparts_show_product_images', 20);
